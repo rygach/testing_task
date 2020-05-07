@@ -12,8 +12,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "ejs": "^3.1.2",
-    "express": "^4.17.1",
-    "fs": "^0.0.1-security"
+    "ejs": "^3.1.2"
   }
 }
