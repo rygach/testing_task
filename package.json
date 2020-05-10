@@ -2,7 +2,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "scss": "node-sass -watch scss -o css"
+    "scss": "node-sass -watch scss --o css"
   },
   "devDependencies": {
     "html-webpack-plugin": "^4.3.0",

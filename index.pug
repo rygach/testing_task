@@ -5,18 +5,22 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         style
-            include ./css/style.css
+            include /scss/dist/style.css
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+
     body
-        div(id='root')
-            input(type="text" id="name" placeholder="Название учреждения")
-            input(type="text" id="address" placeholder="Адрес учреждения")
-            input(type="text" id="phone" placeholder="Телефон учреждения")
-            button(id="addBtn") #{'Add'}
-            button(id="upBtn") #{'Update'}
-            input(type="text" id="identify" placeholder="Идентификатор")
-            button(id="delBtn") #{'Delete'}
-            button(id="loadBtn") #{'Load to LocalStorage'}
-            hr
-            div(id='out')
+        div(class='root')
+            div(class='container')
+                div(class='container-inps')
+                    input(type="text" id="name" placeholder="Название учреждения" class='main-page-inputs')
+                    input(type="text" id="address" placeholder="Адрес учреждения" class='main-page-inputs')
+                    input(type="text" id="phone" placeholder="Телефон учреждения" class='main-page-inputs')
+                    input(type="text" id="identify" placeholder="Идентификатор" class='main-page-inputs')
+                div(class='container-btns')
+                    button(id="addBtn" class='main-page-btns') #{'Add'}
+                    button(id="upBtn" class='main-page-btns') #{'Update'}
+                    button(id="delBtn" class='main-page-btns') #{'Delete'}
+                    button(id="loadBtn" class='main-page-btns') #{'Load to LocalStorage'}
+            div(id='out' class='output-info')
     script
-        include ./js/main.js
+        include /js/main.js
