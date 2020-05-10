@@ -3,12 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './app/main.js',
+    entry: './js/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'main.js'
     },
-    
     devServer: {
         host: 'localhost',
         port: 3000,
@@ -25,7 +24,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './app/index.pug'
+            template: 'index.pug'
         })
     ]
 }
