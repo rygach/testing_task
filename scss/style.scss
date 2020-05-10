@@ -1,81 +1,73 @@
-$fs: 16px;
+// переменные
+$fs: 15px;
 $ff: "Roboto", sans-serif;
 $bodyBC: #edeef0;
+
+// шаблон
+%divborder {
+    width: 46%;
+    height: 100%;
+    padding: 10px;
+}
+
+
+// шаблон
+%contentStyle {
+    background-color:  #ffffff;
+    border: 1px #cacbce solid;
+    border-radius: 5px;
+}
 
 body {
     font-size: $fs;
     font-family: $ff;
     background-color: $bodyBC;
-}
-
-.root {
-    // background-color: #c04a4a;
-    width: 70%;
-    margin: auto;
-}
-
-.container {
-    height: 150px;
-}
-
-.container-inps {
-    // background-color: #62c079;
-    float: left;
-    width: 46%;
-    height: 100%;
-    padding: 10px;
-    border-bottom: 2px #cacbce solid;
-}
-
-.container-btns {
-    // background-color: #b2dd6d;
-    float: right;
-    width: 46%;
-    height: 100%;
-    padding: 10px;
-    border-bottom: 2px #cacbce solid;
-
-}
-
-.main-page-inputs {
-    width: 100%;
-    height: 18.7%;
-    margin-top: 5px;
-    border: 0px;
-    border-radius: 3px;
-    font-weight: bold;
-    text-align: center;
-
-}
-
-.main-page-btns {
-    width: 100%;
-    height: 20%;
-    margin-top: 5px;
-    background-color:  #ffffff;
-    cursor: pointer;
-    border: 0px;
-    border-radius: 3px;
-    font-weight: bold;
-    &:hover {
-        background-color: #d89898;
+    .root {
+        // background-color: #c04a4a;
+        width: 70%;
+        margin: auto;
+        .container {
+            height: 150px;
+            .container-inps {
+                // background-color: #62c079;
+                float: left;
+                @extend %divborder; 
+                @extend %contentStyle;
+                .main-page-inputs {
+                    width: 100%;
+                    height: 18.7%;
+                    margin-top: 5px;
+                    border: 0px;
+                    border-radius: 3px;
+                    font-weight: bold;
+                    text-align: center;
+                
+                }
+            }
+            .container-btns {
+                // background-color: #b2dd6d;
+                float: right;
+                @extend %divborder; 
+                @extend %contentStyle;
+                .main-page-btns {
+                    width: 100%;
+                    height: 20%;
+                    margin-top: 5px;
+                    background-color:  #ffffff;
+                    cursor: pointer;
+                    border: 0px;
+                    border-radius: 3px;
+                    font-weight: bold;
+                    &:hover {
+                        background-color: #bbb9ff;
+                    }
+                }
+            }
+        }
+        .output-info {
+            margin-top: 30px;
+            padding: 20px;
+            @extend %contentStyle;
+        }
     }
 }
-
-.output-info {
-    margin-top: 30px;
-    padding: 10px;
-}
-
-// button {
-//     margin:0px; 
-// 	margin-top:0px;
-// 	padding:0px;
-// 	color: #000000;
-// 	background-color:  #ffffff;
-// 	border: 0px;
-// 	cursor: pointer;
-// 	border-radius: 5px;
-// 	font-weight: bold;
-// 	color: #4a76a8;
-// }

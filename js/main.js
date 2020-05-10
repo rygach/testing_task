@@ -12,7 +12,7 @@ if (localStorage.getItem('item') != undefined) {
 // функция подгрузки содержимого ДЖСОН файла в локалстораж
 document.getElementById('loadBtn').onclick = function () {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'hospitals.json', true);
+    xhr.open('GET', 'lpu.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             localStorage.setItem('item', xhr.responseText);

@@ -1,35 +1,35 @@
+body .root .container .container-inps, body .root .container .container-btns {
+  width: 46%;
+  height: 100%;
+  padding: 10px;
+}
+
+body .root .container .container-inps, body .root .container .container-btns, body .root .output-info {
+  background-color: #ffffff;
+  border: 1px #cacbce solid;
+  border-radius: 5px;
+}
+
 body {
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Roboto", sans-serif;
   background-color: #edeef0;
 }
 
-.root {
+body .root {
   width: 70%;
   margin: auto;
 }
 
-.container {
+body .root .container {
   height: 150px;
 }
 
-.container-inps {
+body .root .container .container-inps {
   float: left;
-  width: 46%;
-  height: 100%;
-  padding: 10px;
-  border-bottom: 2px #cacbce solid;
 }
 
-.container-btns {
-  float: right;
-  width: 46%;
-  height: 100%;
-  padding: 10px;
-  border-bottom: 2px #cacbce solid;
-}
-
-.main-page-inputs {
+body .root .container .container-inps .main-page-inputs {
   width: 100%;
   height: 18.7%;
   margin-top: 5px;
@@ -39,7 +39,11 @@ body {
   text-align: center;
 }
 
-.main-page-btns {
+body .root .container .container-btns {
+  float: right;
+}
+
+body .root .container .container-btns .main-page-btns {
   width: 100%;
   height: 20%;
   margin-top: 5px;
@@ -50,11 +54,11 @@ body {
   font-weight: bold;
 }
 
-.main-page-btns:hover {
-  background-color: #d89898;
+body .root .container .container-btns .main-page-btns:hover {
+  background-color: #bbb9ff;
 }
 
-.output-info {
+body .root .output-info {
   margin-top: 30px;
-  padding: 10px;
+  padding: 20px;
 }
