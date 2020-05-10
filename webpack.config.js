@@ -27,8 +27,5 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './app/index.pug'
         })
-    ],
-    node: {
-        fs: "empty"
-    }
+    ]
 }

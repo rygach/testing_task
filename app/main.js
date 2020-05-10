@@ -12,7 +12,7 @@ if (localStorage.getItem('item') != undefined) {
 // функция подгрузки содержимого ДЖСОН файла в локалстораж
 document.getElementById('loadBtn').onclick = function () {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'hospitals.json', false);
+    xhr.open('GET', 'hospitals.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             localStorage.setItem('item', xhr.responseText);
@@ -49,7 +49,7 @@ document.getElementById('addBtn').onclick = function () {
 // функция удаления по нажатию на кнопку "Delete" и вывода на экран
 document.getElementById('delBtn').onclick = function () {
     // получаем номер нашего учреждения
-    let id = document.getElementById('identify').value;
+    id = document.getElementById('identify').value;
     // сразу обнуляем значение, чтобы случайно пользователь нажав на кнопку
     // не изменил чего-то лишнего
     document.getElementById('identify').value = '';
@@ -57,8 +57,9 @@ document.getElementById('delBtn').onclick = function () {
     hospitals = JSON.parse(localStorage.getItem('item'));
     // удаляем из массива тот элемент, который указал пользователь
     // но так как сплайс при не введенном значении начинает удалять
-    // самый последний элемент, то нужно ввести проверку на число
-    if (isNaN(id) == true) {
+    // самый последний элемент, то нужны проверки:
+    // 1. инпут не пустой 2. инпут является только число 3. инпут не равен пробелу 
+    if (id != '' && isNaN(id) == false && id != ' ') {
         hospitals.splice(id, 1);
     }
     // засовываем массив обратно в локалстораж
@@ -77,7 +78,7 @@ document.getElementById('upBtn').onclick = function () {
     // вытаскиваем с локалстоража всё, что записано в массив
     hospitals = JSON.parse(localStorage.getItem('item'));
     let temp = hospitals[id];
-    if (isNaN(id) == true) {
+    if (id != '' && isNaN(id) == false && id != ' ') {
         temp.name = document.getElementById('name').value;
         temp.address = document.getElementById('address').value;
         temp.phone = document.getElementById('phone').value;
@@ -88,6 +89,8 @@ document.getElementById('upBtn').onclick = function () {
     // выводим обновлённый список
     out();
 }
+
+
 
 // основная функция вывода на экран
 function out() {
